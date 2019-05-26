@@ -1,0 +1,71 @@
+body {
+  font-family: "Nunito";
+}
+
+.App {
+  /* text-align: center; */
+  width: 90vw;
+  height: 70vh;
+  margin: 20px auto;
+  border: 1px solid #ddd;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.05);
+  border-radius: 2px;
+  background: #f9f9f9;
+  position: relative;
+  overflow: auto;
+}
+
+#footer {
+  margin: 20px auto;
+  bottom: 0;
+  width: 90vw;
+  border: 1px solid #ddd;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.05);
+  border-radius: 2px;
+  background: #f9f9f9;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  float: left;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.msg {
+  padding-left: 10px;
+}
+
+#user {
+  height: 45px;
+  width: 20vw;
+}
+.input-container input {
+  height: 45px;
+}
+
+input {
+  box-sizing: border-box;
+  background: #eee;
+  border: 0;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  font-family: Nunito;
+  font-size: 16px;
+}
+
+button {
+  background: #575ed8;
+  color: #fff;
+  font-size: 18px;
+  border: 0;
+  padding: 12px 0;
+  width: 100%;
+  border-radius: 0 0 2px 2px;
+}
