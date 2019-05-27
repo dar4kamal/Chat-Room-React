@@ -7,7 +7,8 @@ class App extends Component {
     this.state = {
       chats: [],
       // endpoint: "http://127.0.0.1:4001/",
-      endpoint: "https://yhlu9.sse.codesandbox.io/",
+      // endpoint: "https://yhlu9.sse.codesandbox.io/",
+      endpoint: "https://chat-room-backend-9646.herokuapp.com/",
       socket: false,
       userSet: false
     };
