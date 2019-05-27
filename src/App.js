@@ -28,6 +28,11 @@ class App extends Component {
     });
   }
 
+  componentWillUpdate() {
+    const chatScroll = document.getElementById("chatScroll");
+    chatScroll.scrollTop = chatScroll.scrollHeight - chatScroll.clientHeight;
+  }
+
   onMsgChange = e => {
     console.log("Msg", e.target.value);
     this.setState({ userMsg: e.target.value });
@@ -54,6 +59,7 @@ class App extends Component {
         userName: userName
       };
       this.refs.msg.value = "";
+      this.setState({ userMsg: "" });
       socket.emit("Talk", data);
     }
   };
@@ -61,14 +67,15 @@ class App extends Component {
     const { chats, userSet, userName } = this.state;
     return (
       <div>
-        <div className="App">
+        <div className="App" id="chatScroll">
           <div className="flex-container">
             {chats ? (
               chats.map((chat, id) => {
                 return (
                   <div key={id} style={{ paddingLeft: 10 }}>
                     <p style={{ color: "#575ed8" }}>
-                      {chat.userName} : {chat.userMsg}
+                      <span id="chatUser">{chat.userName}</span> :{" "}
+                      <span id="chatMsg">{chat.userMsg}</span>
                     </p>
                   </div>
                 );
@@ -78,12 +85,17 @@ class App extends Component {
             )}
           </div>
         </div>
-
         <div id="footer">
           {userSet ? (
             <div>
               <div className="input-container">
-                <input className="msg" id="user" type="text" value={userName} />
+                <input
+                  className="msg"
+                  id="user"
+                  type="text"
+                  value={userName}
+                  disabled={true}
+                />
                 <input
                   ref="msg"
                   className="msg"
